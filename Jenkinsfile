@@ -21,13 +21,7 @@ node {
         // when running in multi-branch job, one must issue this command
         checkout scm
     }
-    stage('Push To Test Org') {
-            rc = bat returnStatus: true, script: "\"${toolbelt}/sfdx\" force:source:push --targetusername ${SFDC_USERNAME}"
-            if (rc != 0) {
-                error 'push failed'
-            }
-            }
-            node{
+   
             stage('mail')
             {
               mail (to: 'sangeetharajan.g@mstsolutions.com',
