@@ -26,7 +26,7 @@ node {
             {
               mail (to: 'sangeetharajan.g@mstsolutions.com',
          subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
-         body: "Please go to ${env.BUILD_URL}.");
+         body: "Please go to ${env.BUILD_URL}. $BUILD_STATUS ");
          }
          }
 node {
